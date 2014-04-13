@@ -21,3 +21,7 @@ function stop() {
   socket.emit('switch', "stop");
   socket.emit('test', "stop");
 }
+function twitch(data) {
+  socket.emit('switch',data);
+  socket.emit('test',data);
+}
