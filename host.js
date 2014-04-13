@@ -1,6 +1,7 @@
 var 
   serialport = require("serialport"),
   SerialPort = serialport.SerialPort, // localize object constructor
+  io = require('socket.io').listen(5000),
   fs = require('fs');
 
 //SERIAL
