@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>NodeLight</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;user-scalable=no" >
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>	
+    <script src="/lib/socket.io.js"></script>
+    <script src="/js/action.js"></script>
+    <script src="/js/client.js"></script>
+    <link rel="stylesheet" href="/css/app.css"/>
+
+  </head>
+  <body>
+   <div id="doEvent"></div>
+   <div class="action_area"></div>
+   <button id="ActionButton" class="forward" onclick="forward()"></button>
+   <button id="ActionButton" class="stop" onclick="stop()"></button>
+   <script type="text/javascript">		
+init();
+var count = 0;
+function init() {
+      if (window.DeviceOrientationEvent) {
+
+      document.getElementById("doEvent").innerHTML = "DeviceOrientation";
+      // Listen for the deviceorientation event and handle the raw data
+	window.addEventListener('deviceorientation', function(eventData) {
+	var axisX = eventData.gamma;
+	var axisY = eventData.beta;
+	var axisZ = eventData.alpha;
+	var clientAble = "able";
+	
+	deviceOrientationHandler(axisX, axisY, axisZ, clientAble);
+	}, false);
+  } else {
+	document.getElementById("doEvent").innerHTML = "Not supported on your device or browser.  Sorry."
+    //turn buttons on if no accelerometer
+  }
+}
+		  </script>
+  </body>
+</html>

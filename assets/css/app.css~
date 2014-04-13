@@ -1,0 +1,22 @@
+#ActionButton {
+    width: 10em;  height: 10em;
+}
+.act1 {
+  background-color: red;
+}
+.act2 {
+  background-color: green;
+}
+.act3 {
+  background-color: yellow;
+}
+.act4 {
+  background-color: blue;
+}
+div.action_area {
+  position:relative;
+  top: 2em;
+  padding: 2em;
+  height: 15em;
+  background-color: #108040;
+}

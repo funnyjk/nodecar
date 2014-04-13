@@ -1,0 +1,22 @@
+#ActionButton {
+    width: 10em;  height: 10em;
+}
+.forward {
+  background-color: red;
+}
+.backward {
+  background-color: green;
+}
+.left {
+  background-color: yellow;
+}
+.right {
+  background-color: blue;
+}
+div.action_area {
+  position:relative;
+  top: 2em;
+  padding: 2em;
+  height: 15em;
+  background-color: #108040;
+}
