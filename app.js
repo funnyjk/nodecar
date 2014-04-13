@@ -1,7 +1,7 @@
 var 
   express = require('express'),
   app = express(),
-  port  = 5000;
+  port  = 3000;
   server = require('http').createServer(app);
   
 app.configure(function(){
