@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script src="/lib/socket.io.js"></script>
+    <script src="/js/action.js"></script>
+  </head>
+  <body>
+  <title>Enter the commands!</title>
+  Enter the commands!
+  <br>
+  <br> forward
+  <br> backward
+  <br> left
+  <br> right
+  <br> stop
+  
+    <form name="input" onsubmit="twitch(document.getElementById('input').value); document.getElementById('input').value = ''; return false;">
+      <input type="text" class="input" id="input">
+    </form>
+  </body>
+</shtml>

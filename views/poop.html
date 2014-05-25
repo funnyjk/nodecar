@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/lib/socket.io.js"></script>
+        <script>
+                var socket = io.connect("192.168.1.4", {port: 5000});
+
+        socket.on('connect', function () {
+                    socket.send('A client connected.');
+                });
+
+                socket.on('switch', function (msg) {
+                    $('div#messages'), msg);
+                });
+
+                socket.on('disconnect', function () {
+            console.log('disconnected');
+                });
+
+        $(document).ready(function(){
+                $('#btn_send').click(function (event) {
+                    socket.send($('#txt_msg').val());
+                    $('#txt_msg').val('');
+            });
+                });
+        </script>
+    </head>
+    <body>
+        <input type="text" id="txt_msg" style="width: 300px;" /><input type="button" id="btn_send" value="send" />  
+        <div id="messages" style="border:solid 1px #000;">&nbsp;</div>
+    </body>
+</html>
